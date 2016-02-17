@@ -1,0 +1,31 @@
+@model IEnumerable<FamPhotos.Models.UserFolder>
+
+@{
+    ViewData["Title"] = "Manage Photos";
+}
+
+<h2>Manage My Photos</h2>
+
+<p>
+    <a asp-action="CreateNewFolder">Create New Folder</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Folders
+        </th>
+    </tr>
+    
+@foreach (var item in Model) {
+    <tr>
+        <td class="col-xs-3">
+                @Html.ActionLink("View Folder", "ViewFolderContents", new { id = item.UserFolderID })
+                <img src="~/images/folder.png" alt="pic" width="150" height="100" />
+               
+</td>
+        <td class="col-xs-6">
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+    </tr>
+}
+</table>

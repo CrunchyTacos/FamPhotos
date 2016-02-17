@@ -1,0 +1,7 @@
+﻿@model FamPhotos.ViewModels.Photos.NoPhotoInListViewModel
+    
+@{
+    ViewData["Title"] = Model.foldername;
+}
+
+<p>@Html.ActionLink("Add a Photo", "Create", new { id = Model.foldernum })</p>
